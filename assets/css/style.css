@@ -9,15 +9,12 @@ h2.ontop {
     position: relative;
     top: 4.7em;
 }
-body{
-    color: red;
-}
-.table{
-    color: red
-}
 .tableContainer{
+    background: rgba(249, 226, 96, 0.7); 
     width:800px;
 }
 .formContainer{
+    background: rgba(249, 226, 96, 0.7); 
     width:800px;
+    height:380px;
 }
