@@ -1,0 +1,23 @@
+.jumbotron {
+    text-align: center;
+    padding: 20px;
+    background: rgba(249, 226, 96, 0.7); 
+    font-family: fantasy;
+    size: 24px;
+}
+h2.ontop {
+    position: relative;
+    top: 4.7em;
+}
+body{
+    color: red;
+}
+.table{
+    color: red
+}
+.tableContainer{
+    width:800px;
+}
+.formContainer{
+    width:800px;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Schdule</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body style="background-image:url('assets/images/hogwarts train.jpg')"> --> 
+
+    <div class='container'>
+            <div class="jumbotron">   
+    <h1 class="ontop">Platform 9 3/4 Train Scheduler</h1>
+</div>
+</div>
+    <br>
+    <br>
+    <div class="tableContainer">
+    <th scope="row">Current Train Schedule</th>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Train Name</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Frequency (min)</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+        <br>
+        <br>
+        <div class="formContainer">
+        <form>
+                <div class="form-group">Add Train</div>
+                  <label for="formGroupExampleInput">Train Name</label>
+                  <input type="text" class="form-control" id="trainInput">
+            
+                
+                  <label for="formGroupExampleInput2">Destination</label>
+                  <input type="text" class="form-control" id="destinationInput">
+                
+                
+                  <label for="formGroupExampleInput">First Train Time (HH:mm-military time)</label>
+                  <input type="text" class="form-control" id="timeInput">
+                
+                
+                  <label for="formGroupExampleInput2">Frequency(min)</label>
+                  <input type="text" class="form-control" id="frequencyInput">
+            </div>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
+        
+<br>
+    
+</body>
+</html>
