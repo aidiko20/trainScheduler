@@ -12,25 +12,46 @@ firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 var name = "";
 var destination = "";
-var time = 0;
+var firstTrain ;
 var frequency = 0;
+
 
 $(".btn-primary").on("click", function (event) {
     event.preventDefault();
     name = $("#trainInput").val().trim();
     destination = $("#destinationInput").val().trim();
-    time = $("#timeInput").val().trim();
+    firstTrain = moment($("#firstTrainInput").val().trim(), "HH:mm").subtract(1, "years");
+    console.log(firstTrain);
     frequency = $("#frequencyInput").val().trim();
-    console.log(name);
-    console.log(destination);
-    console.log(time);
-    console.log(frequency);
+    
 
-      // Comming back
+
       database.ref().push({
         name: name,
         destination: destination,
-        time: time,
+        firstTrain: firstTrain,
         frequency: frequency
+  });
       });
+
+database.ref().on("child_added", function (snapshot) {
+    var sv = snapshot.val();
+    var minAwayData = $("<td>");
+    var newRow = $("<tr>");
+    var nameData = $("<td>");
+    nameData.text(sv.name);
+    var destinationData = $("<td>");
+    destinationData.text(sv.destination);
+    var diffData = $("<td>");
+    diffData.text(moment().diff(moment(earlyTrain), "minutes"));
+    var earlyTrain = $("<td>");
+    earlyTrain.text(moment().diff(moment(sv.date, "HH:mm"), "minutes"));
+    var nextTrainData = moment().add(minAwayData, "minutes");
+    nextTrainData = moment(nextTrainData).format("HH:mm");
+    console.log(snapshot);
+
+    newRow.append(nameData, destinationData, diffData, nextTrainData, minAwayData);
+    $("tbody").append(newRow);
+
+   
 });
