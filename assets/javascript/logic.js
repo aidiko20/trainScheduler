@@ -10,13 +10,13 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
-$(".btn btn-primary").on("click", function (event) {
+$("#submit-btn").on("click", function (event) {
   event.preventDefault();
 
   var name = $("#trainInput").val().trim();
   var destination = $("#destinationInput").val().trim();
-  var frequency = moment($("#frequencyInput").val().trim(), "minutes");
-  var firstTrain = moment($("#firstTrainInput").val().trim(), "HH:mm");
+  var frequency = $("#frequencyInput").val().trim();
+  var firstTrain = $("#firstTrainInput").val().trim();
 
   var newTrain = {
     name: name,
@@ -33,18 +33,19 @@ $(".btn btn-primary").on("click", function (event) {
   $("#frequencyInput").val("");
   $("#firstTrainInput").val("");
 });
+
 database.ref().on("child_added", function (childSnapshot) {
-  var name;
-  var destination;
-  var frequency;
+  var name = childSnapshot.val().name;
+  var destination = childSnapshot.val().destination;
+  var frequency = childSnapshot.val().frequency;
   var nextTrain;
   var minutesAway;
   var firstTrainfirst = moment(childSnapshot.val().firstTrain, "MM:hh").subtract(1, "years");
   var timeDiff = moment().diff(moment(firstTrainfirst), "minutes");
   var remainder = timeDiff % childSnapshot.val().frequency;
-  var minutesAway = childSnapshot.val().frequency - remainder;
-  var nextTrain = moment().add(minutesAway, "minutes");
-  nextTrain = moment(nextTrain).format("HH:mm");
+  var nextTrain = childSnapshot.val().frequency - remainder;
+  var minutesAway = moment().add(minutesAway, "minutes");
+  minutesAway = moment(minutesAway).format("HH:mm");
 
   var newRow = $("<tr>").append(
     $("<td>").text(name),
