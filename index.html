@@ -20,7 +20,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 </head>
 
-<body style="background-image:url('assets/images/hogwarts train.jpg')"> -->
+<body style="background-image:url('assets/images/hogwardsexpress.png"> -->
 
     <div class='container'>
         <div class="jumbotron">
@@ -29,48 +29,46 @@
     </div>
     <br>
     <br>
-    <div class="tableContainer">
-        <th scope="row">Current Train Schedule</th>
-        <table class="table" id='trainTable'>
-            <thead>
-                <tr>
-                    <th scope="col">Train Name</th>
-                    <th scope="col">Destination</th>
-                    <th scope="col">Frequency (min)</th>
-                    <th scope="col">Arrival Time (HH:mm)</th>
-                    <th scope="col">Minutes Away (MM)</th>
-                </tr>
-            </thead>
-            <tbody>
+    <div class="main-container">
+        <div class="formContainer">
+            <h3>Add Train</h3>
+                <form>
+                <label for="formGroupExampleInput">Train Name</label>
+                <input type="text" class="form-control" id="trainInput">
 
-            </tbody>
-        </table>
+                <label for="formGroupExampleInput2">Destination</label>
+                <input type="text" class="form-control" id="destinationInput">
+
+                <label for="formGroupExampleInput">First Train Time (HH:mm-military time)</label>
+                <input type="HH:mm" class="form-control" id="firstTrainInput">
+
+                <label for="formGroupExampleInput2">Frequency(min)</label>
+                <input type="MM" class="form-control" id="frequencyInput">
+                <button type="submit" id="submit-btn">Submit</button>
+                </form>
+        </div>
+        <br>
+        <br>
+        <div class="tableContainer">
+            <h3>Current Train Schedule</h3>
+            <table class="table" id='trainTable'>
+                <thead>
+                    <tr>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency (min)</th>
+                        <th scope="col">Arrival Time (HH:mm)</th>
+                        <th scope="col">Minutes Away (MM)</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
     </div>
     <br>
     <br>
-    <div class="formContainer">
-        <form>
-            <div class="form-group">Add Train</div>
-            <label for="formGroupExampleInput">Train Name</label>
-            <input type="text" class="form-control" id="trainInput">
-
-
-            <label for="formGroupExampleInput2">Destination</label>
-            <input type="text" class="form-control" id="destinationInput">
-
-
-            <label for="formGroupExampleInput">First Train Time (HH:mm-military time)</label>
-            <input type="HH:mm" class="form-control" id="firstTrainInput">
-
-
-
-            <label for="formGroupExampleInput2">Frequency(min)</label>
-            <input type="MM" class="form-control" id="frequencyInput">
-    </div>
-    <br>
-    <br>
-    <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
-    </form>
     <br>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/logic.js"></script>
