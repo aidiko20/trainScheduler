@@ -56,4 +56,12 @@ database.ref().on("child_added", function (childSnapshot) {
   );
   $("#trainTable > tbody").append(newRow);
 
+  const timeEl = document.getElementById('time');
+
+  let today = new Date().toLocaleDateString('en-US', { hour12: true, 
+    hour: "numeric", 
+    minute: "numeric"});
+
+  timeEl.innerHTML = today;
+
 });
