@@ -1,45 +1,67 @@
 .jumbotron {
-    text-align: center;
-    padding: 20px;
-    background-color: #310e68 0.7;
-    background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 50%);     
-    font-family: fantasy;
-    color: white;
-    size: 24px;
+  text-align: center;
+  padding: 20px;
+  background-color: #310e68 0.7;
+  background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 50%);
+  font-family: fantasy;
+  color: white;
+  size: 24px;
 }
 h2.ontop {
-    position: relative;
-    top: 4.7em;
+  position: relative;
+  top: 4.7em;
 }
 
 .main-container {
-    display: flex;
-    list-style-type: none;
-    margin: 20px;
+  display: flex;
+  list-style-type: none;
+  margin: 20px;
 }
 
-.tableContainer{
-    margin: 20px;
-    background:  #5f0f40 50% 0.3; 
-    width:600px;
-    
+.tableContainer {
+  margin: 20px;
+  background: #5f0f40 50% 0.3;
+  width: 600px;
 }
-.formContainer{
-    border-radius: 20px;
-    margin-left: 20px;
-    background:  #5f0f40 50% 0.3;
-    width:400px;
+.formContainer {
+  border-radius: 20px;
+  margin-left: 20px;
+  background: #5f0f40 50% 0.3;
+  width: 400px;
 }
 
 button {
-    background-color: #5f0f40;
-    margin-top: 10px;
-    color: white;
-    width: 100px;
-    border-radius: 10%;
-    border: #5f0f40;
+  background-color: #5f0f40;
+  margin-top: 10px;
+  color: white;
+  width: 100px;
+  border-radius: 10%;
+  border: #5f0f40;
 }
 
-label, th, tbody, h3 {
-    color: white;
+label,
+th,
+tbody,
+h3 {
+  color: white;
+}
+
+.countdown-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.big-text {
+  font-weight: bold;
+  font-size: 6rem;
+  line-height: 1;
+  margin: 1rem 2rem;
+}
+.countdown-el {
+  text-align: center;
+}
+
+.countdown-el span {
+  font-size: 1.5rem;
 }
